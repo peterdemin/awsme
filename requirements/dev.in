@@ -4,6 +4,7 @@ bump2version
 coverage
 prospector
 pytest
+pytest-cov
 tox
 twine
 watchdog
