@@ -1,7 +1,8 @@
-# -*- coding: utf-8 -*-
+"""CloudWatch metrics recorder
 
-"""Top-level package for Amazon Web Services Cloud Watch Metrics library."""
+Usage:
 
-__author__ = """Peter Demin"""
-__email__ = 'peterdemin@gmail.com'
-__version__ = '0.1.0'
+    from awsme.factory import create_cloud_watch
+    cloud_watch = create_cloud_watch()
+    cloud_watch.log('name', dimensions={'key': 'dim'}, value=123)
+"""
