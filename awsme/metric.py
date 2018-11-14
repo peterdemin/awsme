@@ -28,7 +28,7 @@ class Metric:
                               dimensions: Dict[str, str],
                               ) -> Dict[str, Any]:
         timestamp = self.event_time.strftime(
-            '%Y-%m-%d %H:%M:%S UTC'
+            '%Y-%m-%d %H:%M:%S.%f UTC'
         )
         value = float(self.value)
         cw_dimensions = [
