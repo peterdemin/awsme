@@ -1,6 +1,6 @@
 -r base.in
 
-bumpversion
+bump2version
 coverage
 prospector
 pytest
