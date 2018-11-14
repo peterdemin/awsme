@@ -9,3 +9,4 @@ twine
 watchdog
 wheel
 pip-compile-multi
+moto
