@@ -1,0 +1,11 @@
+-r base.in
+
+bumpversion
+coverage
+prospector
+pytest
+tox
+twine
+watchdog
+wheel
+pip-compile-multi
