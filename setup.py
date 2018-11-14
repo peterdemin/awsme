@@ -3,19 +3,21 @@
 
 """The setup script."""
 
+import os
 from setuptools import setup, find_packages
 
+
 with open('README.rst') as readme_file:
-    readme = readme_file.read()
+    README = readme_file.read()
+
 
 with open('HISTORY.rst') as history_file:
-    history = history_file.read()
+    HISTORY = history_file.read()
 
-requirements = ['Click>=6.0', ]
 
-setup_requirements = ['pytest-runner', ]
+with open(os.path.join('requirements', 'base.in')) as fp:
+    REQUIREMENTS = list(fp)
 
-test_requirements = ['pytest', ]
 
 setup(
     author="Peter Demin",
@@ -25,29 +27,26 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
-        "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
-    description="Client AWS CW library to send metrics efficiently",
+    description="AWS CloudWatch client library to send "
+                "metrics conviniently and efficiently",
     entry_points={
         'console_scripts': [
-            'awsme=awsme.cli:main',
+            'awsme-test=awsme.cli:main',
         ],
     },
-    install_requires=requirements,
+    install_requires=REQUIREMENTS,
     license="MIT license",
-    long_description=readme + '\n\n' + history,
+    long_description=README + '\n\n' + HISTORY,
     include_package_data=True,
     keywords='awsme',
     name='awsme',
     packages=find_packages(include=['awsme']),
-    setup_requires=setup_requirements,
+    setup_requires=['pytest-runner'],
     test_suite='tests',
-    tests_require=test_requirements,
+    tests_require=['pytest'],
     url='https://github.com/peterdemin/awsme',
     version='0.1.0',
     zip_safe=False,

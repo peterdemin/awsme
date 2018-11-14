@@ -24,7 +24,9 @@ class Metric:
         data.append(self._format_single_metric(self.dimensions))
         return data
 
-    def _format_single_metric(self, dimensions: Dict[str, str]) -> Dict[str, Any]:
+    def _format_single_metric(self,
+                              dimensions: Dict[str, str],
+                              ) -> Dict[str, Any]:
         timestamp = self.event_time.strftime(
             '%Y-%m-%d %H:%M:%S UTC'
         )

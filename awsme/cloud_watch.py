@@ -1,5 +1,6 @@
 import datetime
 import logging
+from typing import Dict, Callable
 
 import boto3
 
@@ -14,12 +15,16 @@ class CloudWatch:
     using recorder_class instance.
     """
 
-    def __init__(self, namespace, task_name, recorder_class) -> None:
+    def __init__(self,
+                 namespace: str,
+                 default_dimensions: Dict[str, str],
+                 recorder_class: Callable,
+                 **kwargs) -> None:
         client = boto3.client(
             'cloudwatch',
-            region_name='ap-northeast-1',
+            **kwargs
         )
-        self.default_dimensions = {'task': task_name}
+        self.default_dimensions = default_dimensions
         self._recorder = recorder_class(namespace, client)
 
     def log(self, name, dimensions=None, value=1, **kwargs) -> None:
