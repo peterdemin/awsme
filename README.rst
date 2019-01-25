@@ -47,10 +47,10 @@ It's arguments:
 
 * name (required str): name of the metric.
 * dimensions (optional Dict[str, str]): additional dimensions,
-    that will be added to default dimension from factory.
+  that will be added to default dimension from factory.
 * value (optional float): metric's value, 1 by default.
 * unit (optional str): metric unit, e.g. Count, Seconds, Bytes,
-    see `AWS docs`_ for a complete list of valid values.
+  see `AWS docs`_ for a complete list of valid values.
 * storage_resolution (optional int): metric storage resolution in seconds, 60 by default.
 
 
