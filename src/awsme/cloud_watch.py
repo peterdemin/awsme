@@ -22,7 +22,7 @@ class CloudWatch:
                  **kwargs) -> None:
         client = boto3.client(
             'cloudwatch',
-            **kwargs
+            **kwargs,
         )
         self.default_dimensions = default_dimensions
         self._recorder = recorder_class(namespace, client)

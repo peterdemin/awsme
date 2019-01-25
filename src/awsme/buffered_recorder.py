@@ -36,8 +36,7 @@ class BufferedRecorder:
     def flush(self, complete=True):
         '''Sends as much data as possible to CloudWatch.
 
-        If complete is set to False, this only sends
-        at most MAX_BATCH_SIZE full pages.
+        If complete is set to False, this only sends at most MAX_BATCH_SIZE full pages.
         Otherwise it sends all buffered pages, even last incomplete page.
         This way, it minimizes the API usage at the cost of delaying data.
         '''
