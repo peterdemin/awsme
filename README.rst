@@ -19,12 +19,14 @@ AWS cloud watch metrics.
 Usage
 -----
 
-from awsme import create_cloud_watch
-cloud_watch = create_cloud_watch(
-    namespace='Application',
-    dimensions={'version': '1.0.0'},
-)
-cloud_watch.log('metric', dimensions={'key': 'dim'}, value=123)
+.. code-block:: python
+    
+    from awsme import create_cloud_watch
+    cloud_watch = create_cloud_watch(
+        namespace='Application',
+        dimensions={'version': '1.0.0'},
+    )
+    cloud_watch.log('metric', dimensions={'key': 'dim'}, value=123)
 
 Create Options
 --------------
