@@ -30,7 +30,7 @@ class CloudWatch:
     def log(self,
             name: str,
             dimensions: Optional[Dict[str, str]] = None,
-            value: Optional[float] = 1,
+            value: float = 1,
             **kwargs) -> None:
         """Record metric.
 

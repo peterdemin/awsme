@@ -2,6 +2,7 @@
 
 from itertools import count
 import logging
+from typing import List, Dict, Any
 
 from .immediate_recorder import ImmediateRecorder
 from .metric import Metric
@@ -18,7 +19,7 @@ class BufferedRecorder:
 
     def __init__(self, *args, recorder=None, **kwargs) -> None:
         self._recorder = recorder or ImmediateRecorder(*args, **kwargs)
-        self._buffer = []
+        self._buffer = []  # type: List[Dict[str, Any]]
 
     def put_metric(self, metric: Metric) -> None:
         """Add metric_data to buffer. Send full pages"""

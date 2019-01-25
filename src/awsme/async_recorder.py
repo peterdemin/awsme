@@ -1,5 +1,6 @@
 from queue import Queue, Full, Empty
 from threading import Thread
+from typing import Optional
 
 from .metric import Metric
 
@@ -9,8 +10,8 @@ class AsyncRecorder:
 
     def __init__(self, recorder) -> None:
         self._recorder = recorder
-        self._queue = Queue(maxsize=1000)
-        self._thread = None
+        self._queue = Queue(maxsize=1000)  # type: Queue
+        self._thread = None  # type: Optional[Thread]
         self._start()
 
     def put_metric(self, metric: Metric) -> None:
