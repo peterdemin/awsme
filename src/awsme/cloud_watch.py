@@ -1,6 +1,6 @@
 import datetime
 import logging
-from typing import Dict, Callable
+from typing import Optional, Dict, Callable
 
 import boto3
 
@@ -27,7 +27,11 @@ class CloudWatch:
         self.default_dimensions = default_dimensions
         self._recorder = recorder_class(namespace, client)
 
-    def log(self, name, dimensions=None, value=1, **kwargs) -> None:
+    def log(self,
+            name: str,
+            dimensions: Optional[Dict[str, str]] = None,
+            value: Optional[float] = 1,
+            **kwargs) -> None:
         """Record metric.
 
         ``dimensions`` are merged with default_dimensions.

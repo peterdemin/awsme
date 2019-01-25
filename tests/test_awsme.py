@@ -6,18 +6,18 @@
 from click.testing import CliRunner
 from moto import mock_cloudwatch
 
-from awsme import cli
-from awsme.factory import create_cloud_watch
+from awsme.cli import main
+from awsme import create_cloud_watch
 
 
 @mock_cloudwatch
 def test_command_line_interface():
     """Test the CLI."""
     runner = CliRunner()
-    result = runner.invoke(cli.main)
+    result = runner.invoke(main)
     assert result.exit_code == 0
     assert 'Successfully sent metric' in result.output
-    help_result = runner.invoke(cli.main, ['--help'])
+    help_result = runner.invoke(main, ['--help'])
     assert help_result.exit_code == 0
     assert '--help  Show this message and exit.' in help_result.output
 

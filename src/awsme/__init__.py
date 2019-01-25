@@ -1,8 +1,6 @@
-"""CloudWatch metrics recorder
+"""CloudWatch metrics recorder"""
 
-Usage:
+from .factory import create_cloud_watch
 
-    from awsme.factory import create_cloud_watch
-    cloud_watch = create_cloud_watch()
-    cloud_watch.log('name', dimensions={'key': 'dim'}, value=123)
-"""
+
+__all__ = ('create_cloud_watch')

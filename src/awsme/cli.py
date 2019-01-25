@@ -1,8 +1,10 @@
-"""Console script for awsme."""
+"""Console script to test boto configuration."""
 
 import sys
-import click
 import logging
+
+import click
+
 from .factory import create_cloud_watch
 
 
@@ -12,6 +14,7 @@ def main():
     logging.basicConfig(level=logging.DEBUG)
     cloud_watch = create_cloud_watch(
         'Test Namespace',
+        asynchronous=False,
         buffered=False,
         dummy=False,
         dimensions={'By intent': 'Test'},
