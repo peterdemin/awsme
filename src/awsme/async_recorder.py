@@ -1,6 +1,6 @@
 from queue import Queue, Full, Empty
 from threading import Thread
-from typing import Optional
+from typing import Optional  # noqa
 
 from .metric import Metric
 

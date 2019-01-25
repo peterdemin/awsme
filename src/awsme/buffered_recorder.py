@@ -2,7 +2,7 @@
 
 from itertools import count
 import logging
-from typing import List, Dict, Any
+from typing import List, Dict, Any  # noqa
 
 from .immediate_recorder import ImmediateRecorder
 from .metric import Metric
@@ -34,7 +34,7 @@ class BufferedRecorder:
         self._buffer += metric_data
         self.flush(complete=False)
 
-    def flush(self, complete=True):
+    def flush(self, complete: bool = True):
         '''Sends as much data as possible to CloudWatch.
 
         If complete is set to False, this only sends at most MAX_BATCH_SIZE full pages.
@@ -53,7 +53,7 @@ class BufferedRecorder:
             else:
                 break
 
-    def _pop_batch(self, partial=True):
+    def _pop_batch(self, partial: bool = True):
         """Pop first page from buffer.
 
         If there are no pages available, return empty list.
