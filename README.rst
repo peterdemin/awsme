@@ -33,11 +33,11 @@ Create Options
 
 ``create_cloud_watch`` accepts following arguments:
 
-    asynchronous (optional bool): if True (default), send metrics from a separate thread.
-    buffered (optional bool): if True (default), metrics will be accumulated in a buffer and sent in batches.
-    dummy (optional bool): if True, ignore two previous options and create dummy recorder. False by default.
-    dimensions: (optional Dict[str, str]): dictionary of default dimensions, that will be attached to all metrics.
-    All other kwargs will be bypassed to ``boto3.client('cloudwatch', **kwargs)``
+* asynchronous (optional bool): if True (default), send metrics from a separate thread.
+* buffered (optional bool): if True (default), metrics will be accumulated in a buffer and sent in batches.
+* dummy (optional bool): if True, ignore two previous options and create dummy recorder. False by default.
+* dimensions: (optional Dict[str, str]): dictionary of default dimensions, that will be attached to all metrics.
+* All other kwargs will be bypassed to ``boto3.client('cloudwatch', **kwargs)``
 
 Log Options
 -----------
@@ -45,13 +45,13 @@ Log Options
 Object, returned by ``create_cloud_watch`` has only one public method - ``log``.
 It's arguments:
 
-    name (required str): name of the metric.
-    dimensions (optional Dict[str, str]): additional dimensions,
-        that will be added to default dimension from factory.
-    value (optional float): metric's value, 1 by default.
-    unit (optional str): metric unit, e.g. Count, Seconds, Bytes,
-        see `AWS docs`_ for a complete list of valid values.
-    storage_resolution (optional int): metric storage resolution in seconds, 60 by default.
+* name (required str): name of the metric.
+* dimensions (optional Dict[str, str]): additional dimensions,
+    that will be added to default dimension from factory.
+* value (optional float): metric's value, 1 by default.
+* unit (optional str): metric unit, e.g. Count, Seconds, Bytes,
+    see `AWS docs`_ for a complete list of valid values.
+* storage_resolution (optional int): metric storage resolution in seconds, 60 by default.
 
 
 AWS configuration
