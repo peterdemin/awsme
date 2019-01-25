@@ -31,7 +31,7 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     description="AWS CloudWatch client library to send "
-                "metrics conviniently and efficiently",
+                "metrics conveniently and efficiently",
     entry_points={
         'console_scripts': [
             'awsme-test=awsme.cli:main',
