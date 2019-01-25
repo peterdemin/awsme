@@ -36,7 +36,7 @@ def recorder_factory(asynchronous: Optional[bool] = True,
             client=client,
         )
         if buffered:
-            recorder = BufferedRecorder(recorder)
+            recorder = BufferedRecorder(recorder=recorder)
         if asynchronous:
             recorder = AsyncRecorder(recorder)
         return recorder
