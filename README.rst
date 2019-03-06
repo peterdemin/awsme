@@ -42,7 +42,7 @@ Create Options
 Log Options
 -----------
 
-Object, returned by ``create_cloud_watch`` has only one public method - ``log``.
+CloudWatch, returned by ``create_cloud_watch`` has two public methods. The primary method is ``log``.
 It's arguments:
 
 * name (required str): name of the metric.
@@ -53,6 +53,18 @@ It's arguments:
   see `AWS docs`_ for a complete list of valid values.
 * storage_resolution (optional int): metric storage resolution in seconds, 60 by default.
 
+Flushing
+--------
+
+If ``create_cloud_watch`` was called with ``buffered=True`` (default) then you may want to forcefully 
+flush the internal metrics buffer. 
+In a standard application this will likely not be necessary, as the buffer will auto-flush ``atexit``.
+However, if your application is running as an AWS Lambda function, the execution of the Lambda function
+will be "frozen" when the function completes, preventing exiting and thus flushing. In this use case, 
+you will need to forcibly flush the buffer by calling ``flush``.
+It's argument:
+
+* complete (optional bool): to perform a complete flush, True by default.
 
 AWS configuration
 -----------------
