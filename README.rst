@@ -64,7 +64,7 @@ will be "frozen" when the function completes, preventing exiting and thus flushi
 you will need to forcibly flush the buffer by calling ``flush``.
 It's argument:
 
-* complete (optional bool): to perform a complete flush, True by default.
+* complete (optional bool): if True (default), perform a complete flush.
 
 AWS configuration
 -----------------
