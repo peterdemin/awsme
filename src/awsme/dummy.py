@@ -5,3 +5,4 @@ class DummyCloudWatch:
 
     def flush(self, complete: bool = True) -> None:
         pass
+        
