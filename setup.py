@@ -16,7 +16,7 @@ with open('HISTORY.rst') as history_file:
 
 
 with open(os.path.join('requirements', 'base.in')) as fp:
-    REQUIREMENTS = list(fp)
+    REQUIREMENTS = [x.rstrip() for x in list(fp) if not x.startswith('boto3')]
 
 
 setup(
