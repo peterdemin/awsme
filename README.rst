@@ -16,6 +16,16 @@ Amazon Web Services Cloud Watch Metrics Library
 Configurable client library, that supports asynchronous and buffered sending of
 AWS cloud watch metrics.
 
+Installation
+------------
+
+By default awsme is installed without ``boto3`` dependency to make it deploy
+faster in AWS Lambda environment (See `#3 <https://github.com/peterdemin/awsme/issues/3>` for details).
+
+If you run awsme outside of Lambda, use following command to activate ``boto3`` dependency::
+
+    pip install awsme[boto3]
+
 Usage
 -----
 
