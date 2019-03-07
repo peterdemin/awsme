@@ -19,3 +19,4 @@ recorder.put_metric(
         dimensions={},
     )
 )
+print("Exiting")

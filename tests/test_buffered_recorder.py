@@ -48,7 +48,7 @@ def test_buffered_recorder_flush_atexit():
         name="1",
         dimensions={},
     )
-    test_result = '{}\n'.format(test_metric.to_metric_data())
+    test_result = 'Exiting\n{}\n'.format(test_metric.to_metric_data())
     assert result == test_result
 
 
