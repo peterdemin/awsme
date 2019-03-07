@@ -1,5 +1,6 @@
 import datetime
 import logging
+from subprocess import run
 from unittest import mock
 
 from awsme.immediate_recorder import ImmediateRecorder
@@ -34,6 +35,21 @@ def test_buffered_recorder_complete_flush_keeps_nothing():
     recorder, fake_recorder = make_recorder(MAX_BUFFER_SIZE)
     recorder.flush()
     assert fake_recorder.put_metric_data.call_count == MAX_BUFFER_SIZE // PAGE_SIZE
+
+def test_buffered_recorder_flush_atexit():
+    completed_process = run(
+        ['python', 'tests/buffered_recorder_atexit.py'], 
+        capture_output=True, 
+        check=True
+    )
+    result = completed_process.stdout.decode()
+    test_metric = Metric(
+        event_time=datetime.datetime.min,
+        name="1",
+        dimensions={},
+    )
+    test_result = '{}\n'.format(test_metric.to_metric_data())
+    assert result == test_result
 
 
 def make_recorder(dimensions_count):
