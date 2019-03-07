@@ -54,6 +54,6 @@ setup(
     test_suite='tests',
     tests_require=['pytest'],
     url='https://github.com/peterdemin/awsme',
-    version='0.2.5',
+    version='0.2.4',
     zip_safe=False,
 )
