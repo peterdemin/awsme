@@ -1,6 +1,6 @@
 import datetime
 import logging
-from subprocess import run
+import subprocess
 from unittest import mock
 
 from awsme.immediate_recorder import ImmediateRecorder
@@ -37,9 +37,9 @@ def test_buffered_recorder_complete_flush_keeps_nothing():
     assert fake_recorder.put_metric_data.call_count == MAX_BUFFER_SIZE // PAGE_SIZE
 
 def test_buffered_recorder_flush_atexit():
-    completed_process = run(
+    completed_process = subprocess.run(
         ['python', 'tests/buffered_recorder_atexit.py'], 
-        capture_output=True, 
+        stdout=subprocess.PIPE, 
         check=True
     )
     result = completed_process.stdout.decode()
