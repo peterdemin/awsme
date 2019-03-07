@@ -67,7 +67,7 @@ pydocstyle==3.0.0         # via prospector
 pyflakes==1.6.0           # via prospector
 pygments==2.3.1           # via ipython, readme-renderer
 pylint-celery==0.3        # via prospector
-pylint-django==2.0.2      # via prospector
+pylint-django==2.0.6      # via prospector
 pylint-flask==0.5         # via prospector
 pylint-plugin-utils==0.5  # via prospector, pylint-celery, pylint-django, pylint-flask
 pylint==2.1.1             # via prospector, pylint-celery, pylint-django, pylint-flask, pylint-plugin-utils
