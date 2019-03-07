@@ -22,6 +22,10 @@ class AsyncRecorder:
             # ignore metric if queue is full:
             pass
 
+    def flush(self, complete: bool = True) -> None:
+        """Flushes the contained recorder"""
+        self._recorder.flush(complete=complete)
+
     def _start(self):
         """Start sending thread"""
         if self._thread is not None:

@@ -1,5 +1,6 @@
 """Buffering recorder"""
 
+import atexit
 from itertools import count
 import logging
 from typing import List, Dict, Any  # noqa
@@ -20,6 +21,7 @@ class BufferedRecorder:
     def __init__(self, *args, recorder=None, **kwargs) -> None:
         self._recorder = recorder or ImmediateRecorder(*args, **kwargs)
         self._buffer = []  # type: List[Dict[str, Any]]
+        atexit.register(self.flush) # ensure that we flush before we depart this earth
 
     def put_metric(self, metric: Metric) -> None:
         """Add metric_data to buffer. Send full pages"""
@@ -34,7 +36,7 @@ class BufferedRecorder:
         self._buffer += metric_data
         self.flush(complete=False)
 
-    def flush(self, complete: bool = True):
+    def flush(self, complete: bool = True) -> None:
         '''Sends as much data as possible to CloudWatch.
 
         If complete is set to False, this only sends at most MAX_BATCH_SIZE full pages.

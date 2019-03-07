@@ -47,6 +47,16 @@ class CloudWatch:
             **kwargs,
         ))
 
+    def flush(self, complete: bool = True) -> None:
+        """Sends as much data as possible to CloudWatch.
+
+        In the case of non-buffered recording, this does nothing,
+
+        In the case of buffered recording, this behaves exactly as
+        the contained recorder.
+        """
+        self._recorder.flush(complete=complete)
+
     def _record_metric(self, metric: Metric) -> None:
         logger.debug('log: %r', metric)
         self._recorder.put_metric(metric)
