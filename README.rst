@@ -20,7 +20,7 @@ Installation
 ------------
 
 By default awsme is installed without ``boto3`` dependency to make it deploy
-faster in AWS Lambda environment (See `#3 <https://github.com/peterdemin/awsme/issues/3>` for details).
+faster in AWS Lambda environment (See `#3 <https://github.com/peterdemin/awsme/issues/3>`_ for details).
 
 If you run awsme outside of Lambda, use following command to activate ``boto3`` dependency::
 
