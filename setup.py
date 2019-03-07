@@ -16,7 +16,7 @@ with open('HISTORY.rst') as history_file:
 
 
 with open(os.path.join('requirements', 'base.in')) as fp:
-    REQUIREMENTS = list(fp)
+    REQUIREMENTS = [x.rstrip() for x in list(fp) if not x.startswith('boto3')]
 
 
 setup(
@@ -36,6 +36,9 @@ setup(
         'console_scripts': [
             'awsme-test=awsme.cli:main',
         ],
+    },
+    extras_require={
+        'boto3': ['boto3'],
     },
     install_requires=REQUIREMENTS,
     license="MIT license",
