@@ -37,6 +37,9 @@ setup(
             'awsme-test=awsme.cli:main',
         ],
     },
+    extras_require={
+        'boto3': ['boto3'],
+    },
     install_requires=REQUIREMENTS,
     license="MIT license",
     long_description=README + '\n\n' + HISTORY,
