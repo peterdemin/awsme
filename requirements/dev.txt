@@ -9,7 +9,7 @@
 appnope==0.1.0            # via ipython
 argh==0.26.2              # via watchdog
 asn1crypto==0.24.0        # via cryptography
-astroid==2.0.4            # via prospector, pylint, pylint-celery, pylint-flask, requirements-detector
+astroid==2.2.5            # via prospector, pylint, pylint-celery, pylint-flask, requirements-detector
 atomicwrites==1.3.0       # via pytest
 aws-xray-sdk==0.95        # via moto
 backcall==0.1.0           # via ipython
