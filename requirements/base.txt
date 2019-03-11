@@ -6,7 +6,7 @@
 #    pip-compile-multi
 #
 attrs==19.1.0
-boto3==1.9.109
+boto3==1.9.112
 botocore==1.12.109        # via boto3, s3transfer
 click==7.0
 docutils==0.14            # via botocore
