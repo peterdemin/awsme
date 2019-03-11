@@ -19,7 +19,7 @@ bump2version==0.5.10
 certifi==2018.11.29       # via requests
 cffi==1.12.2              # via cryptography
 chardet==3.0.4            # via requests
-coverage==4.5.2
+coverage==4.5.3
 cryptography==2.6.1       # via moto
 decorator==4.3.2          # via ipython, traitlets
 docker-pycreds==0.4.0     # via docker
