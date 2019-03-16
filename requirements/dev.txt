@@ -21,7 +21,7 @@ cffi==1.12.2              # via cryptography
 chardet==3.0.4            # via requests
 coverage==4.5.2
 cryptography==2.6.1       # via moto
-decorator==4.3.2          # via ipython, traitlets
+decorator==4.4.0          # via ipython, traitlets
 docker-pycreds==0.4.0     # via docker
 docker==3.7.0             # via moto
 dodgy==0.1.9              # via prospector
