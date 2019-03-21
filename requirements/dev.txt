@@ -29,7 +29,7 @@ ecdsa==0.13               # via python-jose
 filelock==3.0.10          # via tox
 future==0.17.1            # via python-jose
 idna==2.8                 # via requests
-ipdb==0.11
+ipdb==0.12
 ipython-genutils==0.2.0   # via traitlets
 ipython==7.3.0            # via ipdb
 isort==4.3.12             # via pylint
