@@ -31,7 +31,7 @@ future==0.17.1            # via python-jose
 idna==2.8                 # via requests
 ipdb==0.11
 ipython-genutils==0.2.0   # via traitlets
-ipython==7.3.0            # via ipdb
+ipython==7.4.0            # via ipdb
 isort==4.3.12             # via pylint
 jedi==0.13.3              # via ipython
 jinja2==2.10              # via moto
