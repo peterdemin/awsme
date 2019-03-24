@@ -62,7 +62,7 @@ py==1.8.0                 # via pytest, tox
 pyaml==18.11.0            # via moto
 pycodestyle==2.4.0        # via prospector
 pycparser==2.19           # via cffi
-pycryptodome==3.7.3       # via python-jose
+pycryptodome==3.8.0       # via python-jose
 pydocstyle==3.0.0         # via prospector
 pyflakes==1.6.0           # via prospector
 pygments==2.3.1           # via ipython, readme-renderer
