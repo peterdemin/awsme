@@ -32,7 +32,7 @@ idna==2.8                 # via requests
 ipdb==0.11
 ipython-genutils==0.2.0   # via traitlets
 ipython==7.3.0            # via ipdb
-isort==4.3.12             # via pylint
+isort==4.3.16             # via pylint
 jedi==0.13.3              # via ipython
 jinja2==2.10              # via moto
 jsondiff==1.1.1           # via moto
