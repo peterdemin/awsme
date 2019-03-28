@@ -85,7 +85,7 @@ setoptconf==0.2.0         # via prospector
 snowballstemmer==1.2.1    # via pydocstyle
 toml==0.10.0              # via tox
 toposort==1.5             # via pip-compile-multi
-tox==3.7.0
+tox==3.8.1
 tqdm==4.31.1              # via twine
 traitlets==4.3.2          # via ipython
 twine==1.13.0
