@@ -72,7 +72,7 @@ pylint-flask==0.5         # via prospector
 pylint-plugin-utils==0.5  # via prospector, pylint-celery, pylint-django, pylint-flask
 pylint==2.1.1             # via prospector, pylint-celery, pylint-django, pylint-flask, pylint-plugin-utils
 pytest-cov==2.6.1
-pytest==4.3.0
+pytest==4.4.0
 python-jose==2.0.2        # via moto
 pytz==2018.9              # via moto
 pyyaml==3.13              # via prospector, pyaml, watchdog
