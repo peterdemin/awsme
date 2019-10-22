@@ -20,7 +20,6 @@ class ImmediateRecorder:
 
     def flush(self, complete: bool = True) -> None:
         """Does nothing, as recording is immediate"""
-        pass
 
     def put_metric_data(self, metric_data: List[Dict[str, Any]]) -> None:
         """Send metric data to boto3 client."""
