@@ -20,8 +20,8 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
-lint: ## check style with flake8
-	tox -e flake8 -e lint3
+lint: ## static code analysis
+	tox -e lint3
 
 test: ## run tests quickly with the default Python
 	pytest

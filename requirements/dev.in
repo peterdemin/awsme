@@ -2,7 +2,6 @@
 
 bump2version
 coverage
-prospector
 mypy
 pytest
 pytest-cov
