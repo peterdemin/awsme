@@ -12,3 +12,4 @@ wheel
 pip-compile-multi
 moto
 ipdb
+pylint
